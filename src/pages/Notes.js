@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import { Grid, Paper, Container } from '@mui/material'
+import { Grid, Container } from '@mui/material'
+import NoteCard from '../components/NoteCard'
 
 export default function Notes() {
   const [notes, setNotes] = useState([])
@@ -11,38 +12,27 @@ export default function Notes() {
 
   }, [])
 
-  return (
-    <Container>
-      <Grid container>
-        <Grid item xs={12} sm={6} md={3}>
-          <Paper>1</Paper>
-        </Grid>
-        <Grid item xs={12} sm={6} md={3}>
-          <Paper>2</Paper>
-        </Grid>
-        <Grid item xs={12} sm={6} md={3}>
-          <Paper>3</Paper>
-        </Grid>
-        <Grid item xs={12} sm={6} md={3}>
-          <Paper>4</Paper>
-        </Grid>
-      </Grid>
+  const handleDelete = async (id) => {
+    await fetch('http://localhost:8000/notes/' + id, {
+      method: 'DELETE'
+    })
 
-      <Grid container>
-      {notes.map(note => (
-        <Grid item key={note.id} xs={12} sm={6} lg={4}>
-          <Paper>
-            {note.title}
-          </Paper>        
-        </Grid>
-      ))}
-      {notes.map(note => (
-        <Grid item key={note.id} xs={12} sm={6} lg={4}>
-          <Paper>
-            {note.name}
-          </Paper>
-        </Grid>
-      ))}
+    const newNotes = notes.filter(note => note.id != id)
+    setNotes(newNotes)
+
+  }
+
+  return (
+    <Container
+    sx={
+      {bgcolor: '#f9f9f9'}
+    }>
+      <Grid container spacing={3}>
+        {notes.map(note => (
+          <Grid item key={note.id} xs={12} sm={6} lg={4}>
+            <NoteCard info={note} handleDelete={handleDelete} />        
+          </Grid>
+        ))}
       </Grid>
     </Container>
   )

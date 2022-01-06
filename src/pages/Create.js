@@ -44,7 +44,10 @@ export default function Create() {
   }
 
   return (
-    <Container>
+    <Container
+    sx={
+      {bgcolor: '#f9f9f9'}
+    }>
       <Typography
       variant="h6"
       color="textSecondary"
@@ -89,11 +92,11 @@ export default function Create() {
         
       
       <FormLabel>Note Category</FormLabel>
-        <RadioGroup value={category} onChange={(e) => setCategory(e.target.value)}>
-          <FormControlLabel value="money" control={<Radio />} label="Money" />
-          <FormControlLabel value="todos" control={<Radio />} label="Todos" />
-          <FormControlLabel value="reminders" control={<Radio />} label="Reminders" />
-          <FormControlLabel value="work" control={<Radio />} label="Work" />
+      <RadioGroup value={category} onChange={(e) => setCategory(e.target.value)}>
+        <FormControlLabel value="money" control={<Radio />} label="Money" />
+        <FormControlLabel value="todos" control={<Radio />} label="Todos" />
+        <FormControlLabel value="reminders" control={<Radio />} label="Reminders" />
+        <FormControlLabel value="work" control={<Radio />} label="Work" />
       </RadioGroup>
       
 
