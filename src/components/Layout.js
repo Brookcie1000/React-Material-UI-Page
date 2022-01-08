@@ -1,7 +1,8 @@
 import React from "react";
-import { Drawer, Typography, Box, List, ListItem, ListItemText, ListItemIcon } from "@mui/material";
+import { Drawer, Typography, Box, List, ListItem, ListItemText, ListItemIcon, AppBar, Toolbar, styled } from "@mui/material";
 import { AddCircleOutlineOutlined, SubjectOutlined } from "@mui/icons-material";
 import { useHistory, useLocation } from "react-router-dom/cjs/react-router-dom.min";
+import format from "date-fns/format";
 
 const drawerWidth = 240
 const menuItems = [
@@ -16,6 +17,7 @@ const menuItems = [
         path: '/create'
     }
 ]
+const Offset = styled('div')(({ theme }) => theme.mixins.toolbar); //used as a buffer for the top toolbar
 
 
 export default function Layout({ children }) {
@@ -28,6 +30,22 @@ export default function Layout({ children }) {
             display: 'flex'
         }}
         >
+            <AppBar elevation={0}
+            sx={{
+                width: `calc(100% - ${drawerWidth}px)`
+            }}
+            >
+                <Toolbar>
+                    <Typography
+                    sx={{flexGrow: 1}}
+                    >
+                        Date Today: {format(new Date(), 'do MMMM Y')}
+                    </Typography>
+                    <Typography>
+                        Username
+                    </Typography>
+                </Toolbar>
+            </AppBar>
             <Drawer
             sx={{
                 width: drawerWidth,
@@ -41,7 +59,11 @@ export default function Layout({ children }) {
             anchor="left"
             >
                 <div>
-                    <Typography variant="h5">
+                    <Typography variant="h5"
+                    sx={{
+                        padding: 2
+                    }}
+                    >
                         Menu List
                     </Typography>
                 </div>
@@ -62,18 +84,17 @@ export default function Layout({ children }) {
                         </ListItem>
                     ))}
                 </List>
-
             </Drawer>
             <Box
             sx={{
                 flexGrow: 1,
-                bgcolor: '#f9f9f9'
+                bgcolor: '#f9f9f9',
+                padding: 3
             }}
             >
+                <Offset />
                 {children}
-            </Box>            
+            </Box>  
         </Box>
-
     )
-
 }

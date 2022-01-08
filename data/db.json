@@ -2,19 +2,19 @@
   "notes": [
     {
       "name": "James",
-      "favFood": "Chocolate",
+      "favFood": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Non totam id, temporibus dolore voluptatibus doloremque sapiente animi possimus laboriosam velit error natus corporis, maiores, eius optio obcaecati veritatis libero? Porro ut veniam accusantium. Unde numquam mollitia libero molestias, ipsam sed in omnis dignissimos dolorem autem beatae rerum eveniet! Quidem, eligendi.",
       "category": "money",
       "id": 4
     },
     {
       "name": "Test",
-      "favFood": "Test Food",
+      "favFood": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio hic ab blanditiis, provident molestias unde at aut laboriosam omnis aperiam, velit, dolorem necessitatibus. Ipsa, reiciendis nisi fugiat autem et cupiditate maiores alias enim culpa? Saepe officiis eum veniam, eveniet neque, laboriosam eaque delectus optio porro vitae maiores consequatur minima sit?",
       "category": "reminders",
       "id": 5
     },
     {
       "name": "This is another test",
-      "favFood": "blah\nblah\nblah\nblah",
+      "favFood": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet ipsum esse porro dolorum dolorem voluptate asperiores culpa eum aspernatur tenetur quibusdam vitae tempore laboriosam, ea ex reiciendis provident quos corrupti quae impedit. Saepe nam molestias illum labore maxime repellendus perferendis officia voluptate! Ad laudantium earum ratione deserunt nemo explicabo unde.",
       "category": "todos",
       "id": 6
     }

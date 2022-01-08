@@ -3,9 +3,12 @@ import { Card, CardContent, CardHeader, IconButton, Typography } from "@mui/mate
 import { DeleteOutlined } from "@mui/icons-material";
 
 export default function NoteCard({ info, handleDelete }) {
+
     return (
         <div>
-            <Card elevation={1}>
+            <Card elevation={1}
+            sx={info.category === 'money' ? {border: '1px solid red'} : null}
+            >
                 <CardHeader 
                     action={
                         <IconButton onClick={() => handleDelete(info.id)}>
