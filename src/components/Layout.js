@@ -1,5 +1,5 @@
 import React from "react";
-import { Drawer, Typography, Box, List, ListItem, ListItemText, ListItemIcon, AppBar, Toolbar, styled } from "@mui/material";
+import { Drawer, Typography, Box, List, ListItem, ListItemText, ListItemIcon, AppBar, Toolbar, styled, Avatar } from "@mui/material";
 import { AddCircleOutlineOutlined, SubjectOutlined } from "@mui/icons-material";
 import { useHistory, useLocation } from "react-router-dom/cjs/react-router-dom.min";
 import format from "date-fns/format";
@@ -44,6 +44,9 @@ export default function Layout({ children }) {
                     <Typography>
                         Username
                     </Typography>
+                    <Avatar 
+                    sx={{marginLeft: 2}}
+                    />
                 </Toolbar>
             </AppBar>
             <Drawer
