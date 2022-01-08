@@ -17,16 +17,13 @@ export default function Notes() {
       method: 'DELETE'
     })
 
-    const newNotes = notes.filter(note => note.id != id)
+    const newNotes = notes.filter(note => note.id !== id)
     setNotes(newNotes)
 
   }
 
   return (
-    <Container
-    sx={
-      {bgcolor: '#f9f9f9'}
-    }>
+    <Container>
       <Grid container spacing={3}>
         {notes.map(note => (
           <Grid item key={note.id} xs={12} sm={6} lg={4}>

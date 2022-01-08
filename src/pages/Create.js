@@ -3,7 +3,7 @@ import Typography from '@mui/material/Typography'
 import Button from '@mui/material/Button'
 import Container from '@mui/material/Container'
 import AcUnitRoundedIcon from '@mui/icons-material/AcUnitRounded'
-import { TextField, Radio, RadioGroup, FormControlLabel, FormLabel } from '@mui/material'
+import { TextField, Radio, RadioGroup, FormControlLabel, FormLabel} from '@mui/material'
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min'
 
 export default function Create() {
@@ -44,10 +44,7 @@ export default function Create() {
   }
 
   return (
-    <Container
-    sx={
-      {bgcolor: '#f9f9f9'}
-    }>
+    <Container>
       <Typography
       variant="h6"
       color="textSecondary"
@@ -110,7 +107,6 @@ export default function Create() {
       </Button>
 
       </form>
-
     </Container>
   )
 }
