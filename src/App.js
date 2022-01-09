@@ -4,6 +4,7 @@ import Create from './pages/Create'
 import { createTheme, ThemeProvider } from '@mui/material'
 import { deepPurple } from '@mui/material/colors'
 import Layout from './components/Layout'
+import ErrorPage from './pages/404'
 
 const theme = createTheme({
   palette: {
@@ -29,6 +30,9 @@ function App() {
           </Route>
           <Route path="/create">
             <Create />
+          </Route>
+          <Route path="*">
+            <ErrorPage />
           </Route>
         </Switch>
       </Layout>
