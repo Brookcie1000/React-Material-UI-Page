@@ -39,7 +39,7 @@ export default function Layout({ children }) {
                     <Typography
                     sx={{flexGrow: 1}}
                     >
-                        Date Today: {format(new Date(), 'do MMMM Y')}
+                        Omnium - Date Today: {format(new Date(), 'do MMMM Y')}
                     </Typography>
                     <Typography>
                         Username
